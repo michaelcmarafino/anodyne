@@ -1,0 +1,83 @@
+.wrapper #noteworthy-block {
+    grid-column: 1 / 2;
+    position: relative;
+    background: var(--accent);
+    display: flex;
+}
+
+.wrapper #noteworthy-block::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color-block);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.wrapper #noteworthy-block:hover::before {
+    opacity: 1;
+}
+
+.wrapper #noteworthy-block .text-area {
+    color: white;
+    flex-direction: column;
+    /* background: red; */
+    justify-content: flex-start;
+    align-self: center;
+    z-index: 2;
+    padding: 2rem;
+    height: 90%;
+    width: 80%;
+    margin: 0 auto;
+    text-decoration: none;
+    position: relative;
+}
+
+.wrapper #noteworthy-block .text-area:hover h4{
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.wrapper #noteworthy-block .text-area h3 {
+    padding-bottom: 1.2rem;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.wrapper #noteworthy-block .text-area h2 {
+    padding-bottom: 6rem;
+    font-size: 2rem;
+    /* breakpoint at 1400px */
+}
+
+.wrapper #noteworthy-block .text-area h4 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+@media screen and (max-width: 1023px) {
+    .wrapper #noteworthy-block .text-area {
+        padding: 0 2rem 4rem 0;
+        margin: 2rem auto;
+    }
+
+    .wrapper #noteworthy-block .text-area h4 {
+        padding-bottom: 2rem;
+        padding-left: 0;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper #noteworthy-block {
+        height: 400px;
+    }
+}

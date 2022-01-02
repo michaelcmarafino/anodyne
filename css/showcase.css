@@ -1,0 +1,349 @@
+.wrapper .showcase {
+    grid-column: 1 / 4;
+    background: url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.wrapper .showcase.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1 alternate forwards;
+    animation-delay: .45s;
+}
+
+.wrapper .showcase .overlay {
+    background-color: var(--overlay-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .showcase .overlay .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: white;
+    margin: 2rem 4rem;
+    font-size: 1.1rem;
+    transition: color .1s ease-in;
+    cursor: pointer;
+}
+
+.wrapper .showcase .overlay .logo:hover {
+    color: var(--accent);
+}
+
+.wrapper .showcase .overlay .logo.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out 1 alternate forwards;
+    animation-delay: .75s;
+}
+
+.wrapper .showcase .overlay h1 {
+    color: white;
+    font-size: 3.2rem;
+    padding: 0 5rem;
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
+}
+
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+    } 
+    to { 
+        opacity: 1; 
+    } 
+}
+
+.wrapper .showcase .overlay h1.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out 1 alternate forwards;
+    animation-delay: .75s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+.wrapper .showcase .overlay .arrow-box {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 125px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--overlay-color);
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+    text-decoration: none;
+}
+
+.wrapper .showcase .overlay .arrow-box.slide-down {
+    opacity: 0;
+    animation: slideDown 1s ease-in-out 1 alternate forwards;
+    animation-delay: .5s;
+}
+
+.wrapper .showcase .overlay .arrow-box:hover {
+    color: var(--accent);
+}
+
+/* @keyframes slideRight {
+    from {
+        transform: translateX(125px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  } */
+
+.wrapper .side-menu {
+    grid-column: 4 / 5;
+    grid-row: 1 / 7;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    background: white;
+    z-index: 10;
+}
+
+/* .wrapper .side-menu.slide-right {
+    opacity: 0;
+    animation: slideRight .7s ease-in 1 alternate forwards;
+    animation-delay: .15s;
+} */
+
+.wrapper .side-menu #nav-icon {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+}
+
+.wrapper .side-menu #nav-icon .one,
+.wrapper .side-menu #nav-icon .two,
+.wrapper .side-menu #nav-icon .three {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: black;
+    margin: 5px 0;
+    border-radius: 5px;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.wrapper .side-menu #nav-icon .two {
+    width: 75%;
+}
+
+.wrapper .side-menu #nav-icon .three {
+    width: 86%;
+}
+
+.wrapper .side-menu #nav-icon.open .one {
+    transform: rotate(135deg);
+    margin: 10px 0;
+    border-radius: 0px;
+    background: var(--accent);
+}
+
+.wrapper .side-menu #nav-icon.open .two {
+    opacity: 0;
+    transform: translate3d(-8px,-12px,0);
+}
+
+.wrapper .side-menu #nav-icon.open .three {
+    transform: rotate(-135deg);
+    margin: -19px 0;
+    width: 100%;
+    border-radius: 0px;
+    background: var(--accent);
+}
+
+
+
+
+
+
+
+/* When Side Menu is Active */
+
+
+.open-menu {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    z-index: 10;
+    transition: all .4s ease-in-out;
+    transform: translate3d(-120%, 0, 0);
+}
+
+.open-menu.active {
+    transform: translate3d(0,0,0);
+}
+
+.open-menu .overlay {
+    width: 48vw;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+.open-menu .menu {
+    background: #232428;
+    min-width: 52vw;
+    /* min-width: 600px; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.open-menu .menu ul {
+    margin-right: 7rem;
+    padding: 2rem;
+}
+
+.open-menu .menu ul li {
+    list-style: none;
+}
+
+.link-item {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: 'Lora', serif;
+    color: white;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    transition: color .3s ease-in-out;
+    padding: 1.5rem;
+    display: block;
+}
+
+.link-item.slide-down {
+    opacity: 0;
+    animation: slideDownMenuItems 1s ease-in-out 1 alternate forwards;
+    animation-delay: .35s;
+}
+
+.open-menu .menu ul li a:hover {
+    color: var(--accent);
+}
+
+@keyframes slideDownMenuItems {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+  
+
+@media screen and (max-width: 1023px) {
+    .wrapper .showcase {
+        grid-column: 1 / 3;
+    }
+
+    .wrapper .showcase .overlay .arrow-box {
+        transition: all 0.3s ease-in-out;
+        height: 80px;
+        width: 80px;
+        right: 90px;
+    }
+
+    .wrapper .showcase .overlay h1 {
+        font-size: 2.6rem;
+        padding: 0 2rem;
+        transition: font-size 0.3s ease-in-out;
+    }
+
+    .wrapper .side-menu {
+        grid-column: 3 / 4;
+        grid-row: 1 / 8;
+    }
+
+    .open-menu .overlay {
+        width: 41vw;
+    }
+    
+    .open-menu .menu {
+        min-width: 59vw;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .open-menu .overlay {
+        width: 0vw;
+    }
+
+    .wrapper .showcase .overlay h1 {
+        font-size: 2.3rem;
+        padding: 0 2rem;
+        transition: font-size 0.3s ease-in-out;
+    }
+    
+    .open-menu .menu {
+        min-width: 100vw;
+    }
+
+    .open-menu .menu ul {
+        margin-right: 0;
+        padding: 2rem;
+    }
+
+    .wrapper .showcase .overlay .logo {
+        margin: 2rem;
+    }
+
+    .wrapper .showcase .overlay .arrow-box {
+        right: 0;
+    }
+
+    .wrapper .side-menu {
+        width: 40px;
+        height: 0;
+        display: block;
+        background: transparent;
+        z-index: 10;
+        position: absolute;
+        top: -5px;
+        right: 20px;
+    }
+
+    .wrapper .side-menu #nav-icon .one,
+    .wrapper .side-menu #nav-icon .two,
+    .wrapper .side-menu #nav-icon .three {
+        background: white;
+    }
+}
+
+@media screen and (max-width: 650px) { 
+    wrapper .showcase .overlay h1 {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+        transition: font-size 0.3s ease-in-out;
+    }
+}

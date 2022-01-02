@@ -1,0 +1,130 @@
+.wrapper .awards-block {
+    grid-column: 2 / 3;
+    position: relative;
+    background: white;
+    display: flex;
+}
+
+.wrapper .awards-block::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color-block);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.wrapper .awards-block:hover::before {
+    opacity: 1;
+}
+
+.wrapper .awards-block .text-area {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /* background: red; */
+    justify-content: flex-start;
+    align-self: center;
+    z-index: 2;
+    padding: 2rem;
+    height: 90%;
+    width: 80%;
+    margin: 0 auto;
+    text-decoration: none;
+    position: relative;
+}
+
+.wrapper .awards-block .text-area h3 {
+    padding-bottom: 1.2rem;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom:  1rem;
+}
+
+.wrapper .awards-block .text-area .img {
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.wrapper .awards-block .text-area .img img {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper .awards-block .text-area h4 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+@media screen and (max-width: 1023px) {
+    .wrapper .awards-block .text-area h3 {
+        margin-bottom:  0;
+    }
+
+    .wrapper .awards-block .text-area .img {
+        margin-top: 0rem;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper .awards-block {
+        height: 430px;
+    }
+
+    .wrapper .awards-block .text-area {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        /* background: red; */
+        justify-content: flex-start;
+        align-self: center;
+        z-index: 2;
+        padding: 0;
+        height: 90%;
+        width: 80%;
+        margin: 0 auto;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .wrapper .awards-block .text-area h4 {
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-bottom: 1rem;
+        padding-left: 0;
+    }
+
+    .wrapper .awards-block .text-area .img {
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+        max-height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 550px) { 
+    .wrapper .awards-block {
+        height: 400px;
+    }
+
+    .wrapper .awards-block .text-area .img img {
+        height: 100%;
+        width: 100%;
+    }
+
+}

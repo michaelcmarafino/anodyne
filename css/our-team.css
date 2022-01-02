@@ -1,0 +1,129 @@
+.wrapper .our-team-block {
+    grid-column: 1 / 2;
+    position: relative;
+    /* overflow: hidden; */
+    height: 100%;
+    width: 100%;
+}
+  
+.wrapper .our-team-block .slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    color: white;
+    background: red;
+}
+  
+.wrapper .our-team-block .slider .slide.show {
+    opacity: 1;
+}
+
+.wrapper .our-team-block .slider .slide.show .overlay {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color-block);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.wrapper .our-team-block .slider .slide.show .overlay:hover {
+    opacity: 1;
+}
+
+.wrapper .our-team-block .slider .slide .content {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 4rem 3rem;
+    z-index: 3;
+    text-decoration: none;
+    color: white;
+    /* background: red; */
+}
+
+.wrapper .our-team-block .slider .slide .content h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.wrapper .our-team-block .slider .slide .content h2 {
+    font-size: 3rem;
+}
+
+.wrapper .our-team-block .slider .slide:first-child {
+    background: url('../img/person1.jpg') no-repeat
+    center top/cover;
+}
+.wrapper .our-team-block .slider .slide:nth-child(2) {
+    background: url('../img/person2.jpg') no-repeat
+    center top/cover;
+}
+.wrapper .our-team-block .slider .slide:nth-child(3) {
+    background: url('../img/person3.jpg') no-repeat
+    center top/cover;
+}
+
+.wrapper .our-team-block .buttons {
+    /* background: red; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem 1rem;
+    z-index: 4;
+    color: white;
+    display: flex;
+    font-size: 2rem;
+}
+
+.wrapper .our-team-block .buttons #prev {
+    margin: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.wrapper .our-team-block .buttons #next {
+    margin: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .wrapper .our-team-block .slider .slide .content {
+        margin: 5rem 3rem;
+    }
+
+    .wrapper .our-team-block .slider .slide:first-child {
+        background: url('../img/person1.jpg') no-repeat
+        center center/cover;
+    }
+    .wrapper .our-team-block .slider .slide:nth-child(2) {
+        background: url('../img/person2.jpg') no-repeat
+        center center/cover;
+    }
+    .wrapper .our-team-block .slider .slide:nth-child(3) {
+        background: url('../img/person3.jpg') no-repeat
+        center center/cover;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper .our-team-block {
+        height: 400px;
+    }
+
+    .wrapper .our-team-block .buttons {
+        margin-right: 4rem;
+    }
+}
+

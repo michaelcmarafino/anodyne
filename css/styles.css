@@ -1,0 +1,55 @@
+/* This version is for below 1400px, need media queries for above that and below at the correct break points */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Lora");
+@import "showcase.css";
+@import "noteworthy.css";
+@import "experience-two.css";
+@import "our-team.css";
+@import "awards.css";
+@import "about.css";
+@import "experience-one.css";
+@import "contact-us.css";
+@import "our-company.css";
+@import "footer.css";
+
+:root {
+    --overlay-color: rgba(35, 38, 38, 0.6);
+    --overlay-color-block: rgba(38, 38, 38, 0.3);
+    --accent: #55a04d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300))); */
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 125px;
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    grid-template-rows: 100vh 550px 550px 550px 600px 450px;
+    background: #3d3d3d;
+}
+
+@media screen and (max-width: 1023px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr 90px;
+        grid-template-rows: 100vh repeat(4, minmax(8rem, 0.85fr)) 700px 630px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}

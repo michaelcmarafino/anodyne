@@ -1,0 +1,75 @@
+.wrapper .our-company {
+    grid-column: 1 / 4;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.wrapper .our-company .content {
+    padding: 0rem 6rem;
+    /* background: red; */
+}
+
+.wrapper .our-company .content h1 {
+    font-size: 2.8rem;
+    padding-bottom: 1.8rem;
+    padding-top: 1.8rem;
+}
+
+.wrapper .our-company .content p {
+    line-height: 1.9;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Lora', serif;
+}
+
+.wrapper .our-company .content a {
+    display: block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1023px) {
+    .wrapper .our-company {
+        grid-column: 1 / 3;
+    }
+
+    .wrapper .our-company .content {
+        padding: 0rem 4rem;
+        /* background: red; */
+    }
+
+    .wrapper .our-company .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .wrapper .our-company .content a {
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper .our-company .content {
+        padding: 1rem 3rem;
+        /* background: red; */
+    }
+
+    .wrapper .our-company .content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .wrapper .our-company .content h1 {
+        font-size: 1.8rem;
+    }
+}
