@@ -1,4 +1,4 @@
-# Anodyne
+# Anodyne Design Studio
 
 Fully responsive landing page for a digital marketing agency in Brooklyn.
 
